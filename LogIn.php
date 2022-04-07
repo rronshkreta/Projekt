@@ -3,32 +3,17 @@
 session_start();
 require_once("connection.php");
 require_once("function.php");
-
+require("User.php");
 
 
 if(isset($_POST['button'])){
-    $email =$_POST['email'];
-        $password =$_POST['password'];
-            $query =
-            "SELECT b.email ,(select bb.password
-            from user bb
-            where bb.password like '$password')
-            FROM user b
-            WHERE email like '$email' ";
-           
-            $result = mysqli_query($con,$query);
-             
-            $count = mysqli_num_rows($result);
-
-            if($count ==1){ 
-                header("Location: index.php");
-            }
-   
-    
-}  
-else{
-    echo 'Emaili ose passwordi jane gabim.';
-}
+    if(!empty($_POST['email']) && !empty($_POST['password'])){ 
+    $user = new User();
+    $user->LogIn($_POST['email'],$_POST['password']);
+} }
+//else{
+    //echo 'Emaili ose passwordi jane gabim.';
+//}
 ?>
 
 

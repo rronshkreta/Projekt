@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 require("connection.php");
 include("function.php");
@@ -17,48 +17,8 @@ if(isset($_POST['buttoni'])){
     $user->setEmail($_POST['email']);
     $user ->setPassword($_POST['password']);
     $user ->insertData();    
-}}
-//
-    //if(isset($_POST['submit'])){ 
-        //$user->setName($_POST['name']);
-        //$user->setSurname($_POST['surname']);
-        //$user->setUsername($_POST['username']);
-        //$user->setEmail($_POST['email']);
-       // $user->setPassword($_POST['password']);
-       //$user = new User();
-        //$user_id=random_num(20);
-        //$user-> insertData();
-        //$name =!empty($_POST['name'])? trim($_POST['name']) : null;
-        //$surname =!empty($_POST['surname'])? trim($_POST['surname']) : null;
-        //$username =!empty($_POST['username'])? trim($_POST['username']) : null;
-        //$email =!empty($_POST['email'])? trim($_POST['email']) : null;
-        //$password =!empty($_POST['password'])? trim($_POST['password']) : null;
-       // $sql = "INSERT INTO user (user_id,name,surname,username,email,password) VALUES (:user_id,:name,:surname,:username,:email,:password)";
-        //$stm = $this->dbcon->prepare($sql);
-       // $stm -> bindValue(':name',$name);
-       // $stm -> bindValue(':surname',$surname);
-       // $stm -> bindValue(':username',$username);
-        //$stm -> bindValue(':email',$email);
-       // $stm -> bindValue(':password',$password);
-
-        //$result = $stm->execute();
-        //if($result){
-        //    echo 'Thank you for registrating with our website';
-          //  header("Location:LogIn.php");
-         //   die;
-       // }
-        //if(!empty($name) && !empty($surname)
-        //&& !empty($username) && !empty($email)
-       // && !empty($password)){
-        //$sql = "insert into user (user_id,name,surname,username,email,password) values('$user_id','$name','$surname','$username','$email','$password')";
-        //$stm = $this->dbcon->prepare($sql);
-        //$stm->execute([$this->user_id,$this->name,$this->surname,$this->username,$this->email,$this->password]);
-        //header("LogIn.php");
-        //mysqli_query($con,$query);
-       // header("Location:LogIn.php");
-       // die;       
-    //}
-//}
+}
+}
 
 ?>
 
@@ -183,7 +143,7 @@ align-items: center;">
         </div>
         </div>
             <br>
-            <input type="submit" name="buttoni" placeholder="SignUp" id = "signUpButton" >
+            <input type="submit" name="buttoni" placeholder="SignUp" id = "signUpButton" onclick="" >
             <br>
             <a href="LogIn.php" style="text-emphasis: none;"><p style="color:#2b81ff;">Have an account? Log In</p></a>
         </form>

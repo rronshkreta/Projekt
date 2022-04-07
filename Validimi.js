@@ -10,12 +10,18 @@ const password2 = document.getElementById('password2');
 document.addEventListener('DOMContentLoaded',function(ngjarja){
     const button = document.getElementById('signUpButton');
     const validate = (ngjarja) =>{
-        ngjarja.preventDefault;
+        ngjarja.preventDefault();
         checkInput();
+        return true;
     }
-    button.addEventListener('click',validate);
+    
+
 });
-function checkInput(){
+
+    //button.addEventListener('click',validate);
+
+function checkInput(event){
+    event.preventDefault();
     const nameValue = namee.value.trim();
     const surnameValue = surname.value.trim();
     const usernameValue = username.value.trim();

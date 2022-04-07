@@ -79,10 +79,11 @@ class User extends dbConnect{
         $result = $stm ->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    public function readDataByID($user_id){
-        $sql = 'SELECT * from book where user_id = :id';
+    public function readDataByID($id){
+        $sql = 'SELECT * from user where id = :id';
         $stm = $this->dbcon->prepare($sql);
-        $stm->execute([':id' => $this->id=$user_id]);
+        $stm->execute([':id' => $this->id=$id]);
+        $result = $stm->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
     public function updateData(){
@@ -90,10 +91,10 @@ class User extends dbConnect{
         $stm=$this->dbcon->prepare($sql);
         $stm->execute([$this->name,$this->surname,$this->username,$this->email,$this->password,$this->user_id]);
     }
-    public function deleteData($user_id){
-        $sql="DELETE FROM user WHERE user_id =:id";
+    public function deleteData($id){
+        $sql="DELETE FROM user WHERE id =:id";
         $stm = $this->dbcon->prepare($sql);
-        $stm->bindParam(":id",$user_id);
+        $stm->bindParam(":id",$id);
         $stm->execute();
         if($stm==true){
             echo "<script>
@@ -105,6 +106,19 @@ class User extends dbConnect{
         else{
             return false;
         }
+    }
+    public function LogIn($email,$password){
+        $sql = "SELECT * from user where email = :email and password = :password";
+        $stm = $this->dbcon->prepare($sql);
+        $stm->execute([':email' =>$this->email=$email,':password'=>$this->password=$password]);
+        $result = $stm->fetch(PDO::FETCH_ASSOC);
+        if($result == true){ 
+            header("Location: index.php");
+        }
+        else{
+            echo "Email or password are incorrect";
+        }
+        
     }
 
 

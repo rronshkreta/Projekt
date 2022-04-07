@@ -4,7 +4,7 @@ session_start();
 include("connection.php");
 include("function.php");
 
-$user_data = check_login($con);
+
 
 ?>
 
@@ -38,7 +38,7 @@ $user_data = check_login($con);
                 <div class="about-us-text">
                     <h1>About Us</h1>
                     <p>Since its fuse in 2005, Library has cut a specialty 
-                        for itself in the youngsters’ books section of the 
+                        for itself in the youngsters' books section of the 
                         distributing business. We have some expertise in
                         books implied for offspring of various ages.
                         The wide scope of books offered by us incorporates fantasies,
