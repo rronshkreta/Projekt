@@ -1,0 +1,525 @@
+<?php
+session_start();
+include("connection.php");
+include("function.php");
+
+$user_data = check_login($con);
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="App">
+    <div class="header">
+        <a href="index.php">
+        <img src="images/Logoupdated1.png" alt="Sigma Library">
+        </a>
+        <ul>
+            <li><a href="index.php">Home</li></a>
+			<li><a href="Books.php">Books</li></a>
+			<li><a href="aboutus.php">About Us</li></a>
+            <li><a href="LogIn.php">LogIn/Register</li></a>
+            <li><a href ="logOut.php">LogOut</li></a>
+            <!-- <li><?php //echo $user_data['name'].$user_data['surname'];?></li>-->
+        </ul>
+    </div>
+
+    <div class="container-1">
+        <h1>Kosovo's most awarded online library platform</h1>
+        <h2>Find your dream book with <span style="color:#01449f">Library</span></h2>
+        <a href="#">
+            <button class="btn">Browse Books</button>
+        </a>
+        <br>
+        <img src="images/reading.png" alt="">
+    </div>
+
+    <section id="highlights">
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    <div class="container-2">
+        <div class="row">
+        <h2>Why choose <span style="color:#01449f">Library</span></h2>
+        <div class="highlight-wrapper">
+            <div class="highlight">
+                <div class="highlight-img">
+                    <svg fill="#000000" width="52" height="52" version="1.1" id="lni_lni-pointer-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	                        x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+	                    <g>
+                            <path d="M38.6,62.7c-4.5,0-9.8-0.8-13.7-2.8c-4.6-2.4-7.7-8.7-9.1-11.7c-0.2-0.5-0.5-1-0.6-1.1c-3.1-5-5.7-8.9-8.3-12.3
+                                c-1.3-1.7-2.9-3.8-3-6.4c0-2.9,2-5.6,4.9-6.6c2.3-0.8,4.9-0.4,7.5,0.9c0.9,0.5,1.7,1,2.5,1.6c0-4.2-0.1-8.5,0.1-12.7
+                                c0.1-2,0.2-4,1-5.8c0.9-2.1,2.8-3.6,5.1-4.3c2.1-0.6,4.4-0.3,6.1,0.8c0.5,0.3,1,0.8,1.5,1.3c0,0,0,0,0,0c1.5,1.7,2.5,4.1,2.8,6.9
+                                c0.2,1.8,0.1,3.6,0,5.4c0,0.1,0,0.2,0,0.3c2.4-0.4,5.1,0.4,6.9,2.1c2.9-0.9,6.2,0.1,8.3,2.4c1.4-0.4,3-0.4,4.5,0.2
+                                c2.1,0.8,3.8,2.4,4.6,4.4c0.7,1.7,0.7,3.5,0.7,5c0,3.4,0.1,7-0.1,10.5c-0.2,4.8-0.9,10.9-4.5,15.3c-2.9,3.5-7.5,5.7-13.3,6.3
+                                C41.1,62.7,39.9,62.7,38.6,62.7z M11.3,24.9c-0.5,0-1,0.1-1.4,0.2c-1.2,0.4-2.5,1.7-2.5,3.2c0,1.4,1.1,2.9,2.2,4.2
+                                c2.7,3.5,5.5,7.5,8.6,12.6c0.2,0.3,0.4,0.8,0.7,1.4c1.2,2.5,4,8.2,7.6,10.1c4.2,2.2,10.9,2.7,15.3,2.3c3.4-0.4,8.1-1.6,11-5
+                                c2.9-3.6,3.5-8.9,3.7-13.2c0.1-3.4,0.1-6.9,0.1-10.3c0-1.3,0-2.7-0.5-3.8c-0.4-1.1-1.3-1.9-2.5-2.3c-1.1-0.4-2.2-0.3-3.1,0.2
+                                c-0.4,0.2-0.9,0.3-1.3,0.2c-0.4-0.1-0.8-0.4-1.1-0.8c-1.1-2-3.9-2.9-5.8-1.8c-0.8,0.4-1.7,0.2-2.3-0.5c-1.3-1.8-4-2.4-5.9-1.2
+                                c-0.5,0.3-1.2,0.4-1.8,0.1c-0.6-0.3-0.9-0.9-0.9-1.5c0-1,0.1-2,0.1-3c0.1-1.7,0.2-3.3,0.1-4.8c-0.2-2-0.9-3.8-1.9-4.9l0,0
+                                c-0.3-0.3-0.5-0.5-0.8-0.7c-0.9-0.6-2-0.7-3.2-0.4c-1.3,0.4-2.3,1.3-2.8,2.4c-0.6,1.2-0.6,2.7-0.7,4.5c-0.2,5.5-0.1,11.1,0,16.5
+                                c0,0.7-0.4,1.3-1,1.6c-0.6,0.3-1.4,0.2-1.9-0.3c-1.5-1.4-3-2.8-4.7-3.7C13.9,25.5,12.6,24.9,11.3,24.9z"/>
+	                    </g>
+                    </svg>
+                </div>
+                <h3 class="highlight-subtitles">Easy and Quick</h3>
+            </div>
+            <div class="highlight">
+                <div class="highlight-img">
+                    <svg fill="#000000" width="52" height="52" version="1.1" id="lni_lni-book" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	                        y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                        <g>
+                            <path d="M39.9,51.3H24.1c-1,0-1.8,0.8-1.8,1.8s0.8,1.8,1.8,1.8h15.8c1,0,1.8-0.8,1.8-1.8S40.9,51.3,39.9,51.3z"/>
+                            <path d="M23.8,33.8h16.5c2.1,0,3.8-1.7,3.8-3.8v-6.2c0-2.1-1.7-3.8-3.8-3.8H23.8c-2.1,0-3.8,1.7-3.8,3.8V30
+                                C20,32.1,21.7,33.8,23.8,33.8z M23.5,23.8c0-0.1,0.1-0.3,0.3-0.3h16.5c0.1,0,0.3,0.1,0.3,0.3V30c0,0.1-0.1,0.3-0.3,0.3H23.8
+                                c-0.1,0-0.3-0.1-0.3-0.3V23.8z"/>
+                            <path d="M16.4,4.8h36.7c1,0,1.8-0.8,1.8-1.8s-0.8-1.8-1.8-1.8H16.4c-3.8,0-6.9,2.9-7.2,6.7c0,0.1,0,0.2,0,0.3V57
+                                c0,3.2,2.8,5.8,6.2,5.8h34.1c2.6,0,4.7-2.1,4.7-4.7V16.5c0-2.6-2.1-4.7-4.7-4.7H16.2c0,0,0,0,0,0c0,0,0,0,0,0
+                                c-2.1,0-3.4-1.3-3.4-3.3C12.7,6.4,14.3,4.8,16.4,4.8z M16.1,15.3C16.1,15.3,16.1,15.3,16.1,15.3C16.1,15.3,16.2,15.3,16.1,15.3
+                                h33.3c0.7,0,1.2,0.5,1.2,1.2v41.6c0,0.7-0.5,1.2-1.2,1.2H15.3c-1.4,0-2.7-1-2.7-2.3V14.5C13.6,15,14.8,15.3,16.1,15.3z"/>
+                        </g>
+                    </svg>
+                </div>
+                <h3 class="highlight-subtitles">10,000+ Books</h3>
+            </div>
+            <div class="highlight">
+                <div class="highlight-img">
+                    <svg fill="#000000" width="52" height="52" version="1.1" id="lni_lni-wallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	                        y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                        <path d="M54.4,21.5h-1v-5.6c0-2.4-1.1-4.5-3-5.9c-1.9-1.4-4.3-1.7-6.5-0.9L8.1,21.5c-3.8,0.2-6.8,3.3-6.8,7.2v19.4
+                            c0,4,3.2,7.2,7.2,7.2h45.9c4,0,7.2-3.2,7.2-7.2V28.7C61.6,24.7,58.3,21.5,54.4,21.5z M45,12.4c1.1-0.4,2.4-0.2,3.4,0.5
+                            c1,0.7,1.6,1.8,1.6,3v5.6H18.8L45,12.4z M54.4,51.8H8.5c-2,0-3.7-1.7-3.7-3.7V28.7c0-2,1.7-3.7,3.7-3.7h45.9c2,0,3.7,1.7,3.7,3.7
+                            v2.7H46.4c-3.9,0-7.1,3.2-7.1,7.1s3.2,7.1,7.1,7.1h11.7v2.4C58.1,50.1,56.4,51.8,54.4,51.8z M58.1,34.9v7.3H46.4
+                            c-2,0-3.6-1.6-3.6-3.6s1.6-3.6,3.6-3.6H58.1z"/>
+                    </svg>
+                </div>
+                <h3 class="highlight-subtitles">Affordable</h3>
+            </div>
+        </div>
+    </div>    
+    </div>
+    </section>
+
+    <section id="features">
+        <div class="wave-2">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container-3">
+            <div class="row">
+                <h2 class="features-title">Featured <span style="color: #01449f;">Books</span></h2>
+                
+                </div>
+                
+                <div class="Slide">
+                <button class="left"><</button>
+            <div class= "slider">
+                
+                <div class="booko" id='firstClone'>
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Lord of the Flies</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                </div>
+                    <div class="booko">
+                        <a href="#">
+                            <figure class="book-img-wrapper">
+                                <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
+                            </figure>
+                        </a>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Art of Computer Programming</a>
+                        </div>
+                        <div class="book-price">
+                            $29.00
+                        </div>    
+                        
+                    </div>
+                    <div class="booko">
+                        <a href="#">
+                            <figure class="book-img-wrapper">
+                                <img src="images/thepragmaticprogrammer.jpg" alt class="book-img">
+                            </figure>
+                        </a>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Pragmatic Programmer</a>
+                        </div>
+                        <div class="book-price">
+                            $35.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <a href="#">
+                            <figure class="book-img-wraper">
+                                <img src="images/Animalfarm.jpg" alt class="book-img">
+                            </figure>
+                        </a>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Animal farm</a>
+                        </div>
+                        <div class="book-price">
+                            $44.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <a href="#">
+                            <figure class="book-img-wrapper">
+                                <img src="images/atomichabits.jpg" alt class="book-img">
+                            </figure>
+                        </a>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Atomic Habits</a>
+                        </div>
+                        <div class="book-price">
+                            $22.00
+                        </div>
+                        
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/the-art-of-war-349.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Art of War</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $49.00
+                            </span>
+                            $14.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/thehobbit.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Hobbit</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $51.99
+                            </span>
+                            $22.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/crackignthecodinginterview.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Cracking the Coding Interview</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $32.99
+                            </span>
+                            $15.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/tokillamockingbird.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">To Kill a Mockingbird</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $42.00
+                            </span>
+                            $34.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/divinecomedy.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Divine Comedy</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $50.00
+                            </span>
+                            $37.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/thelionthewitch.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Lion,the Witch and the Wardrobe</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/slaughterhouse-five.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Slaughterhouse-five</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $50.00
+                            </span>
+                            $37.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Lord of the Flies</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                    </div>
+                    <div class="booko" id='firstClone'>
+                        <a href="#">
+                            <figure class="book-img-wrapper">
+                                <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
+                            </figure>
+                        </a>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Art of Computer Programming</a>
+                        </div>
+                        <div class="book-price">
+                            $29.00
+                        </div>    
+                        
+                    </div>
+
+
+                
+                    
+                </div>
+                <button class="right">></button>
+            </div>  
+            
+            </div> 
+            
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="recent">
+        <div class="container-3">
+            <div class="row">
+                <h2 class="section-title">Discount <span style="color: #01449f;">Books</span></h2>
+                <div class="books">
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/the-art-of-war-349.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Art of War</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $49.00
+                            </span>
+                            $14.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/thehobbit.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Hobbit</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $51.99
+                            </span>
+                            $22.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/crackignthecodinginterview.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Cracking the Coding Interview</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $32.99
+                            </span>
+                            $15.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/tokillamockingbird.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">To Kill a Mockingbird</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $42.00
+                            </span>
+                            $34.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/divinecomedy.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Divine Comedy</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $50.00
+                            </span>
+                            $37.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/thelionthewitch.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Lion,the Witch and the Wardrobe</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/slaughterhouse-five.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Slaughterhouse-five</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $50.00
+                            </span>
+                            $37.00
+                        </div>
+                    </div>
+                    <div class="book">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Lord of the Flies</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="explore">
+        <div class="container-4">
+            <div class="row row-column">
+                <h2>Explore more <span style="color: #01449f;">Books</span></h2>
+                <a href="Books.html">
+                    <button class="btn">Explore Books</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container-5">
+            <div class="row row-column">
+                <a href="#">
+                    <figure class="footer-logo">
+                        <img src="images/Logoupdated1.png" class="footer-logo-img" alt>
+                    </figure>
+                </a>
+                <div class="footer-copyright">Copyright &copy 2021 Library</div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+
+
+<script src="Slider.js"></script>
+</body>
+</html>
