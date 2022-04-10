@@ -9,7 +9,6 @@ class dbConnect{
    
     public function connect(){ 
     try {
-        //define('MYSQL_USER', 'root');
         $this->con = new PDO("mysql:servername=$this->servername;dbname=$this->dbname",
         $this->user, $this->password);
         $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION) . "<br/>";

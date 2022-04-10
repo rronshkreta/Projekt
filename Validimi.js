@@ -14,14 +14,12 @@ document.addEventListener('DOMContentLoaded',function(ngjarja){
         checkInput();
         return true;
     }
-    
+    button.addEventListener('click',validate);
 
 });
 
-    //button.addEventListener('click',validate);
 
-function checkInput(event){
-    event.preventDefault();
+function checkInput(){
     const nameValue = namee.value.trim();
     const surnameValue = surname.value.trim();
     const usernameValue = username.value.trim();
@@ -31,48 +29,61 @@ function checkInput(event){
 
     if(nameValue === ''){
        setError(namee,"Emri nuk mund te jete i zbrazet");
+       
     }else if(!isName (nameValue)){
         setError(namee,"Emri nuk ploteson kushtet");
+        
     }
     else{
         setSuccess(namee);
     }
     if(surnameValue === ''){
         setError(surname, "Mbiemri nuk mund te jete i zbrazet");
+       
     } else if(!isSurname(surnameValue)){
         setError(surname, "Mbiemri nuk ploteson kushtet");
+        
     }
     else{
         setSuccess(surname);
     } 
     if(usernameValue === ''){
         setError(username, "Username nuk mund te jete i zbrazet");
+        
     } else if(!isUsername(usernameValue)){
         setError(username, "Username nuk ploteson kushtet");
+        
     }
+    
     else{
         setSuccess(username);
     }
     if(emailValue === ''){
         setError(email, "Email-i nuk mund te jete i zbrazet");
+        
     }else if(!isEmail(emailValue)){
         setError(email, "Email-i nuk plotesone kushtet");
+        
     }
     else{
         setSuccess(email);
     }
     if(passwordValue === ''){
         setError(password, "Passwordi nuk mund te jete i zbrazet");
+        
     } else if(!isPassword(passwordValue)){
         setError(password, "Passwordi nuk ploteson kushtet");
+        
     }
     else{
         setSuccess(password);
     }
     if(password2Value === ''){
         setError(password2, "Passwordi nuk mund te jete i zbrazet");
+    
     } else if(passwordValue !== password2Value){
         setError(password2, "Passwordet nuk perputhen");
+    
     }
     else{
         setSuccess(password2);
@@ -92,6 +103,7 @@ function setError(input,message){
 function setSuccess(input){
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
+    return true;
 }
 
 function isName(namee){

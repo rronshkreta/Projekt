@@ -47,41 +47,6 @@ include("function.php");
                                 </div>
                                 <div class="books">
                                     <?php
-                                    //include("Book.php");
-                                    //$sql = "select * from book";
-                                   // $result = mysqli_query($con,$sql);
-                                    //if(mysqli_num_rows($result)>0){
-                                      //  return $result;
-                                     //}
-                                     //$row= mysqli_fetch_assoc($result);
-                                     //if($result){ 
-                                     //while($row= mysqli_fetch_assoc($result)){
-                                      //  $image_name = $row['photo'];
-                                            //$isbn = $row['isbn'];
-                                           // $name =$row['name'];
-                                           // $description = $row['description'];
-                                           // $price = $row['price'];
-                                       // echo '<div class="book">
-                                        //<a href="#">
-                                           // <figure class="book-img-wrapper">
-                                            //<input type="image" src="'.$photo.'" style="float:right" width="48" height="48">
-                                            //</figure>
-                                       // </a>
-                                       // <div class = "book-isbn">
-                                       // <a class="isbn-title-link" href="#">'.$isbn.'</a>
-                                       // </div>
-                                       // <div class="book-title">
-                                       //     <a class="book-title-link" href="#">'.$name.'</a>
-                                        //</div>
-                                       // <div class="book-description">
-                                       // <p>'.$description.'</p>
-                                       // </div>
-                                       // <div class="book-price">
-                                       //     '.$price.'
-                                       // </div>    
-                                   // </div>';
-                                    //}
-                               // }
                                     require_once("Book.php");
                                         $libri = new Book();
                                         $all = $libri->readData();

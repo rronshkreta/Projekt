@@ -16,7 +16,16 @@ if(isset($_POST['buttoni'])){
     $user ->setUsername($_POST['username']);
     $user->setEmail($_POST['email']);
     $user ->setPassword($_POST['password']);
-    $user ->insertData();    
+    $user ->checkUsername($_POST['username']);
+    $user ->checkEmail($_POST['email']);
+    if($user->checkUsername($_POST['username']) ==false && $user->checkEmail($_POST['email']) == false){  
+            $user ->insertData(); 
+        }
+        else{
+            echo "emaili ose username jane te zene";
+            //header("Location:SignUp.php");
+        }
+       
 }
 }
 
@@ -103,7 +112,7 @@ align-items: center;">
             <img src="images/download.jpg" alt="Library" class="img">
          <div class="signUpBorder">
         <img src="images/Logoupdated1.png" alt="logo"  class="imgL" >
-        <form class="signUp" id="form" method="POST" action="" >
+        <form class="signUp" id="form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
             <h2>SignUp</h2><br>
             <div class="first_row">
                 <div class = "form-control">
@@ -143,7 +152,7 @@ align-items: center;">
         </div>
         </div>
             <br>
-            <input type="submit" name="buttoni" placeholder="SignUp" id = "signUpButton" onclick="" >
+            <input type="submit" name="buttoni" placeholder="SignUp" id = "signUpButton"  >
             <br>
             <a href="LogIn.php" style="text-emphasis: none;"><p style="color:#2b81ff;">Have an account? Log In</p></a>
         </form>
@@ -152,5 +161,5 @@ align-items: center;">
 
 
     </body>
-    <script src="Validimi.js"></script>
+    <script src="Validimi.js?newww"></script>
 </html>

@@ -109,16 +109,34 @@ class User extends dbConnect{
     }
     public function LogIn($email,$password){
         $sql = "SELECT * from user where email = :email and password = :password";
-        $stm = $this->dbcon->prepare($sql);
+       $stm = $this->dbcon->prepare($sql);
         $stm->execute([':email' =>$this->email=$email,':password'=>$this->password=$password]);
         $result = $stm->fetch(PDO::FETCH_ASSOC);
-        if($result == true){ 
+        if($result){ 
             header("Location: index.php");
         }
         else{
             echo "Email or password are incorrect";
         }
         
+    }
+    public function checkUsername($username){
+        $sql = "SELECT * FROM user where username = :username ";
+        $stm = $this->dbcon->prepare($sql);
+        $stm->execute([':username'=>$this->username=$username]);
+        $result=$stm->fetch(PDO::FETCH_ASSOC);
+        if($result==true){
+            return true;
+        }
+    }
+    public function checkEmail($email){
+        $sql = "SELECT  * FROM user where email = :email";
+        $stm = $this->dbcon->prepare($sql);
+        $stm->execute([':email'=>$this->email = $email]);
+        $result=$stm->fetch(PDO::FETCH_ASSOC);
+        if($result==true){
+            return true;
+        }
     }
 
 
