@@ -5,7 +5,7 @@ require("User.php");
 require("Book.php");
 $user=new User();
 if(isset($_SESSION["id"])){
-    $id = $user->setId($_SESSION["id"]);
+    $id = ($_SESSION["id"]);
 }
 else{
     header("Location:LogIn.php");
@@ -31,7 +31,18 @@ else{
                 <li><a href="index.php">Home</li></a>
                 <li><a href="Books.php">Books</li></a>
                 <li><a href="aboutus.php">About Us</a></li>
-                <li><a href="dashboard.php">Dashboard</li></a>
+                <?php 
+            if($id['role'] == 'admin'){ 
+                echo '<li><a href="dashboard.php">Dashboard</li></a>';
+            }
+            ?>
+            <li><h4><?php 
+            echo $id['username'];
+        ?>
+        
+           
+            
+            </h4></li>
                 <li><a href ="logOut.php">LogOut</li></a>
             </ul>
         </div>

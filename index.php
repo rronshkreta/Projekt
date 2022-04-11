@@ -6,12 +6,14 @@ require("Book.php");
 $user=new User();
 
 if(isset($_SESSION["id"])){
-    $id = $user->setId($_SESSION["id"]);
+    $id = ($_SESSION["id"]);
+   
 }
+
 else{
     header("Location:LogIn.php");
 }
-
+    
 ?>
 
 
@@ -36,8 +38,19 @@ else{
             <li><a href="index.php">Home</li></a>
 			<li><a href="Books.php">Books</li></a>
 			<li><a href="aboutus.php">About Us</li></a>
-            <li><a href="dashboard.php">Dashboard</li></a>
-            <!--<li> <h3><?php?></h3></li>-->
+            <?php 
+            if($id['role'] == 'admin'){ 
+                echo '<li><a href="dashboard.php">Dashboard</li></a>';
+            }
+            ?>
+            
+            <li><h4><?php 
+            echo $id['username'];
+        ?>
+        
+           
+            
+            </h4></li>
             <li><a href ="logOut.php">LogOut</li></a>
         </ul>
     </div>
@@ -152,7 +165,7 @@ else{
                             $25.00
                         </div>
                 </div>
-                    <div class="booko">
+                <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
                                 <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
@@ -334,6 +347,7 @@ else{
                             $25.00
                         </div>
                     </div>
+ 
                     <div class="booko" id='firstClone'>
                         <a href="#">
                             <figure class="book-img-wrapper">
@@ -370,10 +384,9 @@ else{
                 <h2 class="section-title">Discount <span style="color: #01449f;">Books</span></h2>
                 <div class="books">
                 <div class="books">
-                                    <?php
-                                    require_once("Book.php");
+                <?php
                                         $libri = new Book();
-                                        $all = $libri->readData();
+                                        $all = $libri->readRandomData();
                                     ?>
                                     
                                         <?php 
@@ -383,23 +396,23 @@ else{
                                                 break;
                                             } ?>
                                             <div class="book">
-                <figure class="book-img-wrapper">
-                <a href="#">
-                <img  src="<?php echo $value['photo']?>" class="book-img">
-                </figure>
-            </a>
-            <div class = "book-isbn">
-            <a class="isbn-title-link" href="#"><?php echo $value['isbn']?></a>
-            </div>
-            <div class="book-title">
-                <a class="book-title-link" href="#"><?php echo $value['name']?></a>
-            </div>
-            <div class="book-description">
-            <p><?php echo $value['description']?></p>
-            </div>
-            <div class="book-price">
-            <span class="book-price-normal"><?php echo $value['price']?></h5>
-            </div>    </div><?php }?>
+                                            <figure class="book-img-wrapper">
+                                            <a href="book1.php? id=<?php echo  $value['id']?>">
+                                            <img  src="<?php echo $value['photo'] ?>" class="book-img">
+                                            </figure>
+                                        </a>
+                                        <div class = "book-isbn">
+                                        <a class="isbn-title-link" href="#"><?php echo $value['isbn']?></a>
+                                        </div>
+                                        <div class="book-title">
+                                            <a class="book-title-link" href="#"><?php echo $value['name']?></a>
+                                        </div>
+                                        <div class="book-description">
+                                        <p><?php echo $value['description']?></p>
+                                        </div>
+                                        <div class="book-price">
+                                        <span class="book-price-normal"><?php echo $value['price']?></span>
+                                        </div>    </div><?php }?>
         </div></div>
     </section>
 

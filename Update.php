@@ -12,6 +12,7 @@ if(isset($_POST['edit'])){
         $libri ->setName($_POST['name']);
         $libri ->setDescription($_POST['description']);
         $libri ->setPrice($_POST['price']);
+        $libri->setLink($_POST['link']);
         echo $libri->updateData();
         echo "<script>
         alert('dhenat jane PERDITSUAR me sukses');
@@ -57,6 +58,10 @@ if(isset($_POST['edit'])){
             <div class="form_group">
             <lable>Cmimi</lable>
             <input type="number" step="0.01" min="0" name="price" id="price" palceholder ="Cmimi"value="<?php echo $record['price'];?>">
+            </div>
+            <div class="form_group">
+            <lable>Linku</lable>
+            <input palceholder="Linku" type="text" name="link" id="link" >
             </div>
             <input class="submit" type="submit" name="edit" id ="submit" >
         </form>

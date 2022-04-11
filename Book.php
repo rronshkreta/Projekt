@@ -7,6 +7,7 @@ class Book extends dbConnect{
     private $name;
     private $description;
     private $price;
+    private $link;
     protected $dbcon;
 
     public function __construct (
@@ -15,7 +16,8 @@ class Book extends dbConnect{
         $isbn='',
         $name='',
         $description='',
-        $price=''
+        $price='',
+        $link =''
         ){ 
         $this ->id = $id;
         $this -> photo = $photo;
@@ -23,6 +25,7 @@ class Book extends dbConnect{
         $this-> name = $name;
         $this -> description = $description;
         $this -> price = $price;
+        $this->link=$link;
 
         $this->dbcon=$this->connect();
     }
@@ -60,14 +63,27 @@ class Book extends dbConnect{
     public function getPrice(){
         return $this-> price;
     }
+    public function setLink($linkk){
+        return $this ->link = $linkk;
+    }
+    public function getLink(){
+        return $this ->link;
+    }
     public function insertData(){
-        $sql = "INSERT into book (photo,isbn,name,description,price) values(?,?,?,?,?)";
+        $sql = "INSERT into book (photo,isbn,name,description,price,link) values(?,?,?,?,?,?)";
         $stm = $this->dbcon->prepare($sql);
-        $stm->execute([$this->photo,$this->isbn,$this->name,$this->description,$this->price]);
-        header("dashboard.php");
+        $stm->execute([$this->photo,$this->isbn,$this->name,$this->description,$this->price,$this->link]);
+        header("Location:dashboard.php");
     }
     public function readData(){
         $sql = 'SELECT * from book';
+        $stm = $this->dbcon->prepare($sql);
+        $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    public function readRandomData(){
+        $sql = 'SELECT * FROM book ORDER BY RAND() LIMIT 8';
         $stm = $this->dbcon->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll(PDO::FETCH_ASSOC);
@@ -81,9 +97,9 @@ class Book extends dbConnect{
             return $result; 
         }
         public function updateData(){     
-            $sql = "UPDATE book SET photo =?,isbn=?, name=? , description=? ,price=? where id=?";
+            $sql = "UPDATE book SET photo =?,isbn=?, name=? , description=? ,price=?,link=? where id=?";
             $stm=$this->dbcon->prepare($sql);
-            $stm->execute([$this->photo,$this->isbn,$this->name,$this->description,$this->price,$this->id]);
+            $stm->execute([$this->photo,$this->isbn,$this->name,$this->description,$this->price,$this->link,$this->id]);
         }
         public function deleteData($id){
             $sql="DELETE FROM book WHERE id =:id";
@@ -91,16 +107,17 @@ class Book extends dbConnect{
             $stm->bindParam(":id",$id);
             $stm->execute();
             if($stm==true){
-                echo "<script>
-                alert('dhenat jane DELETE me sukses');
-                document.location='dashboard.php';
-                </script>";
+                //echo "<script>
+               // alert('dhenat jane DELETE me sukses');
+                //document.location='dashboard.php';
+               // </script>";
+               header("Location:dashboard.php");
             }
             else{
                 return false;
             }
         }
-        public function layout(){
+        /*public function layout(){
             $sql = "select * from book";
             $result = mysqli_query($con,$sql);
             if($result){ 
@@ -133,10 +150,7 @@ class Book extends dbConnect{
         }
     }
     
-    
-    
-    
-            }
+     }*/
     
     }
 ?>

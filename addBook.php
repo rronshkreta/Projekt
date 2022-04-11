@@ -8,6 +8,7 @@ if(isset($_POST['submit'])){
     $libri ->setName($_POST['name']);
     $libri->setDescription($_POST['description']);
     $libri ->setPrice($_POST['price']);
+    $libri->setLink($_POST['link']);
     $libri ->insertData();    
 }
 ?>
@@ -50,6 +51,10 @@ if(isset($_POST['submit'])){
             <div class="form_group">
             <lable>Cmimi</lable>
             <input type="number" step="0.01" min="0" name="price" id="price" palceholder ="Cmimi">
+            </div>
+            <div class="form_group">
+            <lable>Linku</lable>
+            <input palceholder="Link" type="text" name="link" id="link" >
             </div>
             <input class="submit" type="submit" name="submit" id ="submit" >
             <a href="dashboard.php">cancel</a>

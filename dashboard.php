@@ -1,6 +1,16 @@
 <?php
-require_once("connection.php");
+require("connection.php");
+require("User.php");
+require("Book.php");
+$user=new User();
+if(isset($_SESSION["id"])){
+  $id = ($_SESSION["id"]);
+ 
+}
 
+else{
+  header("Location:LogIn.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +32,13 @@ require_once("connection.php");
  <li><a href="Books.php">Books</li></a>
  <li><a href="aboutus.php">About Us</li></a>
        <li><a href="dashboard.php">Dashboard</li></a>
-       <!--<li> <h3><?php?></h3></li>-->
+       <li><h4><?php 
+            echo $id['username'];
+        ?>
+        
+           
+            
+            </h4></li>
        <li><a href ="logOut.php">LogOut</li></a>
    </ul>
 </div>
@@ -37,6 +53,7 @@ require_once("connection.php");
       <th scope="col">Emri i Librit</th>
       <th scope="col">Pershkrimi</th>
       <th scope="col">Cmimi</th>
+      <th scope="col">Linku</th>
       <th scope="col">Operations</th>
     </tr>
   </thead>
@@ -55,6 +72,7 @@ require_once("connection.php");
             <td><?php echo $value['name'];?></td>
             <td><?php echo $value['description'];?></td>
             <td><?php echo $value['price'];?></td>
+            <td><?php echo $value['link'];?></td>
             <td>
             <button ><a href="Update.php? id=<?php echo  $value['id']?>">Update </a></button>
             <button ><a href="Delete.php? id=<?php echo $value['id'];?>">Delete</a</button>

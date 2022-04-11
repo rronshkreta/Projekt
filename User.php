@@ -82,9 +82,9 @@ class User extends dbConnect{
     public function readDataByID($id){
         $sql = 'SELECT * from user where id = :id';
         $stm = $this->dbcon->prepare($sql);
-        $stm->execute([':id' => $this->id=$id]);
+        $stm->execute([':id'=>$this->id=$id]);
         $result = $stm->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        return $result ;
     }
     public function updateData(){
         $sql = "UPDATE user SET name =?, surname=?, username=?, email=?,password=? where user_id=?";
@@ -108,7 +108,7 @@ class User extends dbConnect{
         }
     }
     public function LogIn($email,$password){
-        $sql = "SELECT * from user where email = :email and password = :password";
+        $sql = "SELECT * from user where email =:email and password = :password";
        $stm = $this->dbcon->prepare($sql);
         $stm->execute([':email' =>$this->email=$email,':password'=>$this->password=$password]);
         $result = $stm->fetch(PDO::FETCH_ASSOC);
@@ -121,20 +121,18 @@ class User extends dbConnect{
         
     }
     public function getIDd($email){
-        $sql = 'SELECT id from user where email=:email';
+        $sql = 'SELECT * from user where email=:email';
         $stm=$this->dbcon->prepare($sql);
         $stm ->execute([':email' => $this->email=$email]);
         $result=$stm->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-    public function checkUsername($username){
-        $sql = "SELECT * FROM user where username = :username ";
-        $stm = $this->dbcon->prepare($sql);
-        $stm->execute([':username'=>$this->username=$username]);
+    public function getUsernamee($id){
+        $sql = 'SELECT username from user where id=:id';
+        $stm=$this->dbcon->prepare($sql);
+        $stm ->execute([':id' => $this->id=$id]);
         $result=$stm->fetch(PDO::FETCH_ASSOC);
-        if($result==true){
-            return true;
-        }
+        echo $result;
     }
     public function checkEmail($email){
         $sql = "SELECT  * FROM user where email = :email";

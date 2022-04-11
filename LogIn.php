@@ -10,8 +10,9 @@ if(isset($_POST['button'])){
     if(!empty($_POST['email']) && !empty($_POST['password'])){ 
     $user = new User();
     $user->LogIn($_POST['email'],$_POST['password']);
-    $_SESSION["user"]=true;
+    //$_SESSION["user"]=true;
     $_SESSION["id"]=$user->getIDd($_POST['email']);
+    $_SESSION["username"]=$user->setUsername($_POST['email']);
     
 
     }
