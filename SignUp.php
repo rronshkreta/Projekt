@@ -4,6 +4,9 @@
 require("connection.php");
 include("function.php");
 require("User.php");
+if(isset($_SESSION["id"])){
+    header("Location:index.php");
+}
 if(isset($_POST['buttoni'])){
     if(!empty($_POST['name'])&&
     !empty($_POST['surname']) &&

@@ -1,10 +1,8 @@
 <?php 
-$_SESSION;
-session_start();
-
-if(isset($_SESSION['user_id'])){
-    usset($_SESSION['user_id']);
-}
+require("User.php");
+$_SESSION =[];
+session_unset();
+session_destroy();
 
 header("Location: LogIn.php");
 die;

@@ -1,16 +1,21 @@
 <?php
 
-session_start();
 require_once("connection.php");
-require_once("function.php");
 require("User.php");
 
-
+if(isset($_SESSION["id"])){
+    header("Location:index.php");
+}
 if(isset($_POST['button'])){
     if(!empty($_POST['email']) && !empty($_POST['password'])){ 
     $user = new User();
     $user->LogIn($_POST['email'],$_POST['password']);
-} }
+    $_SESSION["user"]=true;
+    $_SESSION["id"]=$user->getIDd($_POST['email']);
+    
+
+    }
+} 
 //else{
     //echo 'Emaili ose passwordi jane gabim.';
 //}

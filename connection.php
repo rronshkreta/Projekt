@@ -1,4 +1,5 @@
 <?php
+session_start();
 class dbConnect{ 
     private $con=null;
     private $servername = "localhost";

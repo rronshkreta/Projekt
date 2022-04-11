@@ -1,12 +1,15 @@
 <?php
-session_start();
 
-//include("connection.php");
-include("function.php");
-//$user_data = check_login($con);
-
-
-
+require("connection.php");
+require("User.php");
+require("Book.php");
+$user=new User();
+if(isset($_SESSION["id"])){
+    $id = $user->setId($_SESSION["id"]);
+}
+else{
+    header("Location:LogIn.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +32,8 @@ include("function.php");
                     <li><a href="index.php">Home</li></a>
                     <li><a href="Books.php">Books</li></a>
                     <li><a href="aboutus.php">About Us</li></a>
-                    <li><a href="LogIn.php">LogIn/Register</li></a>
+                    <li><a href="dashboard.php">Dashboard</li></a>
+                    <li><a href ="logOut.php">LogOut</li></a>
                 </ul>
             </div>
 
@@ -39,11 +43,6 @@ include("function.php");
                         <div class="row">
                             <div class="books-header">
                                 <h2 class="section-title books-header-title">All Books</h2>
-                                <select id="filter">
-                                    <option value="DEFAULT" disabled selected>Sort</option>
-                                    <option value="LOW-TO-HIGH">Price, Low to High</option>
-                                    <option value="HIGH-TO=LOW">Price, High to Low</option>
-                                </select>
                                 </div>
                                 <div class="books">
                                     <?php
@@ -51,11 +50,11 @@ include("function.php");
                                         $libri = new Book();
                                         $all = $libri->readData();
                                     ?>
-                                    <div class="book">
                                         <?php foreach($all as $key => $value){ ?>
+                                            <div class="book">
             <a href="#">
                 <figure class="book-img-wrapper">
-                <input type="image" src="<?php echo $value['photo']?>" style="float:right" width="48" height="48">
+                <img  src="<?php echo $value['photo']?>" class="book-img">
                 </figure>
             </a>
             <div class = "book-isbn">

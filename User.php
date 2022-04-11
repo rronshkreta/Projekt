@@ -120,6 +120,13 @@ class User extends dbConnect{
         }
         
     }
+    public function getIDd($email){
+        $sql = 'SELECT id from user where email=:email';
+        $stm=$this->dbcon->prepare($sql);
+        $stm ->execute([':email' => $this->email=$email]);
+        $result=$stm->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
     public function checkUsername($username){
         $sql = "SELECT * FROM user where username = :username ";
         $stm = $this->dbcon->prepare($sql);

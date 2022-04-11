@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once("Book.php");
 $libri = new Book();
 $idd =$_GET['id'];

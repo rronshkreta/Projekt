@@ -1,6 +1,5 @@
 <?php
 require_once("connection.php");
-include("function.php");
 
 ?>
 <!DOCTYPE html>
@@ -9,9 +8,24 @@ include("function.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Dashboard</title>
 </head>
 <body>
+<div class="header">
+   
+   <a href="index.php">
+   <img src="images/Logoupdated1.png" alt="Sigma Library">
+   </a>
+   <ul>
+       <li><a href="index.php">Home</li></a>
+ <li><a href="Books.php">Books</li></a>
+ <li><a href="aboutus.php">About Us</li></a>
+       <li><a href="dashboard.php">Dashboard</li></a>
+       <!--<li> <h3><?php?></h3></li>-->
+       <li><a href ="logOut.php">LogOut</li></a>
+   </ul>
+</div>
     <form action="addBook.php" >
     <button  name="button">Add Book</button></form>
 <table class="table">
@@ -32,17 +46,7 @@ include("function.php");
      $libri = new Book();
      $all = $libri->readData();
 
-    //$sql = "select * from book";
-    //$result = mysqli_query($con,$sql);
-    //if($result){
-        //while($row= mysqli_fetch_assoc($result)){
-           // $id = $row['id'];
-           // $photo = $row['photo'];
-           // $isbn = $row['isbn'];
-           // $name =$row['name'];
-           // $description = $row['description'];
-           // $price = $row['price'];
-            //?>
+   ?>
             <?php foreach($all as $key => $value){?>
             <tr>
             <td><?php echo $value['id'];?></td>

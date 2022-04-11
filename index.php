@@ -1,7 +1,17 @@
 <?php
-session_start();
-include("connection.php");
-include("function.php");
+
+require("connection.php");
+require("User.php");
+require("Book.php");
+$user=new User();
+
+if(isset($_SESSION["id"])){
+    $id = $user->setId($_SESSION["id"]);
+}
+else{
+    header("Location:LogIn.php");
+}
+
 ?>
 
 
@@ -12,7 +22,7 @@ include("function.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="Slider.js"></script>
+    
     <title>Library</title>
 </head>
 <body>
@@ -26,9 +36,9 @@ include("function.php");
             <li><a href="index.php">Home</li></a>
 			<li><a href="Books.php">Books</li></a>
 			<li><a href="aboutus.php">About Us</li></a>
-            <li><a href="LogIn.php">LogIn/Register</li></a>
+            <li><a href="dashboard.php">Dashboard</li></a>
+            <!--<li> <h3><?php?></h3></li>-->
             <li><a href ="logOut.php">LogOut</li></a>
-            <!-- <li><?php //echo $user_data['name'].$user_data['surname'];?></li>-->
         </ul>
     </div>
 
@@ -359,137 +369,38 @@ include("function.php");
             <div class="row">
                 <h2 class="section-title">Discount <span style="color: #01449f;">Books</span></h2>
                 <div class="books">
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/the-art-of-war-349.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">The Art of War</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $49.00
-                            </span>
-                            $14.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/thehobbit.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">The Hobbit</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $51.99
-                            </span>
-                            $22.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/crackignthecodinginterview.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">Cracking the Coding Interview</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $32.99
-                            </span>
-                            $15.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/tokillamockingbird.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">To Kill a Mockingbird</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $42.00
-                            </span>
-                            $34.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/divinecomedy.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">Divine Comedy</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $50.00
-                            </span>
-                            $37.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/thelionthewitch.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">The Lion,the Witch and the Wardrobe</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $44.00
-                            </span>
-                            $25.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/slaughterhouse-five.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">Slaughterhouse-five</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $50.00
-                            </span>
-                            $37.00
-                        </div>
-                    </div>
-                    <div class="book">
-                        <figure class="book-img-wrapper">
-                        <a href="#">
-                            <img src="images/lordoftheflies.jpg" alt class="book-img">
-                        </a>
-                        </figure>
-                        <div class="book-title">
-                            <a class="book-title-link" href="#">Lord of the Flies</a>
-                        </div>
-                        <div class="book-price">
-                            <span class="book-price-normal">
-                                $44.00
-                            </span>
-                            $25.00
-                        </div>
-                    </div>
-                </div>
+                <div class="books">
+                                    <?php
+                                    require_once("Book.php");
+                                        $libri = new Book();
+                                        $all = $libri->readData();
+                                    ?>
+                                    
+                                        <?php 
+                                        $i=0;
+                                        foreach($all as $key => $value){
+                                            if(++$i==9){
+                                                break;
+                                            } ?>
+                                            <div class="book">
+                <figure class="book-img-wrapper">
+                <a href="#">
+                <img  src="<?php echo $value['photo']?>" class="book-img">
+                </figure>
+            </a>
+            <div class = "book-isbn">
+            <a class="isbn-title-link" href="#"><?php echo $value['isbn']?></a>
             </div>
-        </div>
+            <div class="book-title">
+                <a class="book-title-link" href="#"><?php echo $value['name']?></a>
+            </div>
+            <div class="book-description">
+            <p><?php echo $value['description']?></p>
+            </div>
+            <div class="book-price">
+            <span class="book-price-normal"><?php echo $value['price']?></h5>
+            </div>    </div><?php }?>
+        </div></div>
     </section>
 
     <section id="explore">
@@ -518,7 +429,7 @@ include("function.php");
 
 
 
-
+    <script src="Slider.js"></script>
 
 </body>
 </html>

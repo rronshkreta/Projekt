@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once("Book.php");
 if(isset($_POST['submit'])){
     $libri = new Book();
@@ -11,7 +11,15 @@ if(isset($_POST['submit'])){
     $libri ->insertData();    
 }
 ?>
-
+<style>
+    #display_image{
+   width: 300px;
+   height: 169px;
+   border: 1px solid black;
+   background-position: center;
+   background-size: cover;
+}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +34,7 @@ if(isset($_POST['submit'])){
         <div class="form_group">
         <div class="form_group" id="drop-area">
             <lable>Foto e Librit</lable>
-            <input type="file" id="fileElem" name="fileElem" single accept="image/*" onchange="handleFiles(this.files)">
-            </div>
+            <input type="file" id="fileElem" name="fileElem" accept="image/*" onchange="handleFiles(this.files)">
             <div class="form_group">
             <lable>Isbn</lable>
             <input palceholder="Emri i Librit" type="number" min="0" name="isbn" id="isbn" >
@@ -49,6 +56,7 @@ if(isset($_POST['submit'])){
         </form>
     </div>
     <script>
+        
         let dropArea = document.getElementById('drop-area');
 
         dropArea.addEventListener('dragenter', handlerFunction, false)
