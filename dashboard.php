@@ -35,6 +35,11 @@ else{
        <li><h4><?php 
             echo $id['username'];
         ?>
+        <?php 
+            if($id['role'] != 'admin'){ 
+                header("Location:index.php");
+            }
+            ?>
         
            
             
