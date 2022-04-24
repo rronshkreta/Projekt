@@ -32,6 +32,38 @@ if(isset($_POST['edit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        form{
+            display: grid;
+            grid-gap: 2rem;
+        }
+        input{
+            background: white;
+            color: rgb(7 2 18);
+            transition: all 200ms ease;
+            border-left: 0 solid transparent;
+            border: 0;
+            height: 5.8rem;
+            padding: 0 calc(5.8rem * 0.5);
+            border-radius: calc(5.8rem * 0.3);
+            box-shadow: 0 0 2rem rgb(0, 0, 0, 20%);
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        form,
+        label {
+        display: grid;
+        grid-gap: 2rem;
+        }
+        label {
+        align-items: center;
+        grid-template-columns: auto 1fr;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
