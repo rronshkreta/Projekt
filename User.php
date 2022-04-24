@@ -87,9 +87,9 @@ class User extends dbConnect{
         return $result ;
     }
     public function updateData(){
-        $sql = "UPDATE user SET name =?, surname=?, username=?, email=?,password=? where user_id=?";
+        $sql = "UPDATE user SET name =?, surname=?, username=?, email=?,password=? where id=?";
         $stm=$this->dbcon->prepare($sql);
-        $stm->execute([$this->name,$this->surname,$this->username,$this->email,$this->password,$this->user_id]);
+        $stm->execute([$this->name,$this->surname,$this->username,$this->email,$this->password,$this->id]);
     }
     public function deleteData($id){
         $sql="DELETE FROM user WHERE id =:id";

@@ -25,6 +25,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     
+    
     <title>Library</title>
 </head>
 <body>
@@ -32,7 +33,7 @@ else{
     <div class="header">
    
         <a href="index.php">
-        <img src="images/Logoupdated1.png" alt="Sigma Library">
+        <img src="Logoupdated1.png" alt="Sigma Library">
         </a>
         <ul>
             <li><a href="index.php">Home</li></a>
@@ -152,7 +153,7 @@ else{
                 <div class="booko" id='firstClone'>
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                            <img src="lordoftheflies.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -168,7 +169,7 @@ else{
                 <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
-                                <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
+                                <img src="theartofcomputerprogramming.jpg" alt class="book-img">
                             </figure>
                         </a>
                         <div class="book-title">
@@ -182,7 +183,7 @@ else{
                     <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
-                                <img src="images/thepragmaticprogrammer.jpg" alt class="book-img">
+                                <img src="thepragmaticprogrammer.jpg" alt class="book-img">
                             </figure>
                         </a>
                         <div class="book-title">
@@ -195,7 +196,7 @@ else{
                     <div class="booko">
                         <a href="#">
                             <figure class="book-img-wraper">
-                                <img src="images/Animalfarm.jpg" alt class="book-img">
+                                <img src="Animalfarm.jpg" alt class="book-img">
                             </figure>
                         </a>
                         <div class="book-title">
@@ -208,7 +209,7 @@ else{
                     <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
-                                <img src="images/atomichabits.jpg" alt class="book-img">
+                                <img src="atomichabits.jpg" alt class="book-img">
                             </figure>
                         </a>
                         <div class="book-title">
@@ -222,7 +223,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/the-art-of-war-349.jpg" alt class="book-img">
+                            <img src="the-art-of-war-349.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -238,7 +239,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/thehobbit.jpg" alt class="book-img">
+                            <img src="thehobbit.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -254,7 +255,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/crackignthecodinginterview.jpg" alt class="book-img">
+                            <img src="crackignthecodinginterview.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -270,7 +271,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/tokillamockingbird.jpg" alt class="book-img">
+                            <img src="tokillamockingbird.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -286,7 +287,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/divinecomedy.jpg" alt class="book-img">
+                            <img src="divinecomedy.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -302,7 +303,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/thelionthewitch.jpg" alt class="book-img">
+                            <img src="thelionthewitch.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -318,7 +319,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/slaughterhouse-five.jpg" alt class="book-img">
+                            <img src="slaughterhouse-five.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -334,7 +335,7 @@ else{
                     <div class="booko">
                         <figure class="book-img-wrapper">
                         <a href="#">
-                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                            <img src="lordoftheflies.jpg" alt class="book-img">
                         </a>
                         </figure>
                         <div class="book-title">
@@ -351,7 +352,7 @@ else{
                     <div class="booko" id='firstClone'>
                         <a href="#">
                             <figure class="book-img-wrapper">
-                                <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
+                                <img src="theartofcomputerprogramming.jpg" alt class="book-img">
                             </figure>
                         </a>
                         <div class="book-title">
@@ -442,7 +443,7 @@ else{
 
 
 
-    <script src="Slider.js"></script>
+    <script src="Slider.js?"></script>
 
 </body>
 </html>

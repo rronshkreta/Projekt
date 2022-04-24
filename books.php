@@ -26,7 +26,7 @@ else{
         <div class="App">
             <div class="header">
                 <a href="index.php">
-                <img src="images/Logoupdated1.png" alt="Sigma Library">
+                <img src="Logoupdated1.png" alt="Sigma Library">
                 </a>
                 <ul>
                     <li><a href="index.php">Home</li></a>

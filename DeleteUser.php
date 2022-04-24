@@ -1,11 +1,11 @@
 <?php
 require("connection.php");
-require_once("Book.php");
+require_once("User.php");
 
-$libri = new Book();
+$user = new User();
 if(isset($_GET['id'])){
         $myID = $_GET['id'];
-        $libri->deleteData($myID);
+        $user->deleteData($myID);
 }
 
 

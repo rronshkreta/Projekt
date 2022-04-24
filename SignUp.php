@@ -2,7 +2,6 @@
 //session_start();
 
 require("connection.php");
-include("function.php");
 require("User.php");
 if(isset($_SESSION["id"])){
     header("Location:index.php");
@@ -112,9 +111,9 @@ align-items: center;">
    
     <body>
         <div class="signUpField">
-            <img src="images/download.jpg" alt="Library" class="img">
+            <img src="download.jpg" alt="Library" class="img">
          <div class="signUpBorder">
-        <img src="images/Logoupdated1.png" alt="logo"  class="imgL" >
+        <img src="Logoupdated1.png" alt="logo"  class="imgL" >
         <form class="signUp" id="form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
             <h2>SignUp</h2><br>
             <div class="first_row">

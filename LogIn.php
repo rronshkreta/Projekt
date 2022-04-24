@@ -106,10 +106,10 @@ align-items: center;">
     </style>
     <body>
         <div class="logIn">
-        <img src="images/download.jpg" alt="bookshelf" class="imgA">
+        <img src="download.jpg" alt="bookshelf" class="imgA">
         <div class="right-side">
          
-           <img src="images/Logoupdated1.png" alt="logo" class="imgL">
+           <img src="Logoupdated1.png" alt="logo" class="imgL">
            
         <form  method="POST" action="LogIn.php" name="login">
             

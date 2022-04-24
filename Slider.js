@@ -12,13 +12,13 @@ slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
 right.addEventListener("click",()=>{
     if(counter>=slideBook.length-1)return;
-    slide.style.transition = 'transform 0.4s ease-in-out';
+    slide.style.transition = 'transform 0.5s ease-in-out';
     counter++;
     slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
 left.addEventListener("click",()=>{
     if(counter<=0)return;
-    slide.style.transition = 'transform 0.4s ease-in-out';
+    slide.style.transition = 'transform 0.5s ease-in-out';
     counter--;
     slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
